@@ -1,0 +1,44 @@
+.lead {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    @include bg-circle(528px, 100px, 0.15);
+
+    right: -309px;
+    top: -415px;
+  }
+
+  &::after {
+    @include bg-circle(794px);
+
+    left: -351px;
+    top: 39px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px 100px;
+  }
+
+  &__img {
+    position: relative;
+    max-width: 540px;
+
+    picture {
+      display: flex;
+    }
+  }
+
+  &__content {
+    max-width: 420px;
+  }
+
+  &__title {
+  }
+
+  &__subtitle {
+    margin-bottom: 70px;
+  }
+}

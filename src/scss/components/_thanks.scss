@@ -1,0 +1,47 @@
+.thanks {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0 110px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -100px;
+    right: -100px;
+    bottom: -220px;
+    z-index: -1;
+    height: 275px;
+    background-color: #262b37;
+    filter: blur(100px);
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 1px solid $grey-color;
+    border-radius: 8px;
+    padding: 50px;
+    min-height: 460px;
+    max-width: 1030px;
+    text-align: center;
+    background: rgba(46, 46, 46, 5%);
+    backdrop-filter: blur(50px);
+
+    &::before {
+      @include bg-circle(390px, 100px, 0.26);
+
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__subtitle {
+    margin: 0 auto 70px;
+    max-width: 352px;
+  }
+}

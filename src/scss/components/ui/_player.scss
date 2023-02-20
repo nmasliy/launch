@@ -1,0 +1,44 @@
+.player-icon {
+  @include circle(64px, $white-color);
+  @include flex-all-center;
+
+  flex-shrink: 0;
+  transition: $transition;
+
+  path {
+    transition: $transition;
+  }
+
+  @include hover {
+    background-color: $blue-color;
+
+    path {
+      fill: $white-color;
+    }
+  }
+}
+
+.player-icon-sm {
+  @include circle(42px, $white-color);
+  @include flex-all-center;
+
+  flex-shrink: 0;
+  transition: $transition;
+
+  path {
+    transition: $transition;
+  }
+
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  @include hover {
+    background-color: $blue-color;
+
+    path {
+      fill: $white-color;
+    }
+  }
+}

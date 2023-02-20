@@ -1,0 +1,28 @@
+.consult {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    @include bg-circle(650px);
+
+    left: -193px;
+    bottom: -250px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__info {
+    padding-bottom: 50px;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 400px;
+  }
+}

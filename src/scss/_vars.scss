@@ -1,0 +1,19 @@
+// base
+$font-family: "Helvetica", sans-serif;
+$content-width: 1240px;
+$container-offset: 15px;
+$container-width: calc($content-width + ($container-offset * 2));
+$transition: 0.25s ease-in-out;
+$menu-transition: 0.35s ease-in-out;
+
+// colors
+$white-color: #fff;
+$dark-color: #0c0c0c;
+$black-color: #000;
+$accent-color: #ee3a26;
+$blue-color: #6187b5;
+$dark-blue-color: #2d3442;
+$grey-color: #2e2e2e;
+$light-grey-color: #d2d2d3;
+$g1-color: #e0e4eb;
+$g2-color: #535353;

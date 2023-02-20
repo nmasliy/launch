@@ -1,0 +1,179 @@
+.section-title {
+  margin-bottom: 18px;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: $white-color;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  line-height: 1.4;
+  color: $white-color;
+}
+
+.block-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.color-accent {
+  color: $accent-color;
+}
+
+.color-white {
+  color: $white-color;
+}
+
+.text-medium {
+  font-weight: 500;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.page-wrapper {
+  @include footerToBottom;
+
+  overflow: hidden;
+}
+
+.is-hidden {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 $container-offset;
+  max-width: $container-width;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.disable-scroll,
+.overflow-hidden {
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
+  }
+}
+
+.section-padding {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.simplebar-scrollbar::before {
+  background-color: $white-color;
+}
+
+.slider-pagination {
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: $grey-color;
+    opacity: 1;
+    transition: background-color $transition;
+
+    &.swiper-pagination-bullet-active {
+      background-color: $blue-color;
+    }
+  }
+}
+
+.banner {
+  border-radius: 2px 0 0 2px;
+  padding: 8px 10px 8px 38px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  background: url("../img/timer-icon.svg") left 10px center no-repeat;
+  background-color: $accent-color;
+}
+
+@media screen and (max-width: 1024px) {
+  .section-padding {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .section-title {
+    margin-bottom: 14px;
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+  }
+
+  .block-title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .player-icon {
+    width: 54px;
+    height: 54px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .block-title {
+    font-size: 16px;
+  }
+}

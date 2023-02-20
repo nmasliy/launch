@@ -1,0 +1,64 @@
+.study {
+  position: relative;
+  overflow: hidden;
+  padding-top: 0;
+
+  &::after {
+    @include bg-circle(446px, 100px, 0.17);
+
+    right: -59px;
+    bottom: -280px;
+  }
+
+  &__head {
+    margin: 0 auto;
+    max-width: 810px;
+  }
+
+  &__subtitle {
+    margin-bottom: 60px;
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 40px;
+    gap: 24px;
+  }
+
+  &__img {
+    picture {
+      display: flex;
+    }
+
+    img {
+      border-radius: 4px;
+    }
+  }
+
+  &__benefits {
+    counter-reset: study;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 70px;
+    border: 1px solid $grey-color;
+    border-radius: 8px;
+    padding: 22px 27px;
+    background: rgba(46, 46, 46, 5%);
+    gap: 0 70px;
+  }
+
+  &__item {
+    counter-increment: study;
+    display: flex;
+
+    &::before {
+      @include circle(36px);
+      @include flex-all-center;
+
+      content: "0" counter(study);
+      flex-shrink: 0;
+      margin-right: 18px;
+    }
+  }
+}

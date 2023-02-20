@@ -1,0 +1,211 @@
+.header {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1;
+  transition: $transition;
+
+  &__phone-mob {
+    display: none;
+  }
+
+  &__logo {
+    display: flex;
+    margin-right: 50px;
+  }
+
+  &__btn {
+    display: inline-block;
+    margin-left: 70px;
+    padding: 24px 30px 24px 67px;
+    width: 155px;
+    background: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 2.41846L3 6.41846V20.4185C3 20.9489 3.21071 21.4576 3.58579 21.8327C3.96086 22.2077 4.46957 22.4185 5 22.4185H19C19.5304 22.4185 20.0391 22.2077 20.4142 21.8327C20.7893 21.4576 21 20.9489 21 20.4185V6.41846L18 2.41846H6Z' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3 6.41846H21' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 10.4185C16 11.4793 15.5786 12.4967 14.8284 13.2469C14.0783 13.997 13.0609 14.4185 12 14.4185C10.9391 14.4185 9.92172 13.997 9.17157 13.2469C8.42143 12.4967 8 11.4793 8 10.4185' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") center left 29px no-repeat;
+    background-color: $accent-color;
+    transition: $transition;
+
+    &:hover {
+      color: $accent-color;
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 2.41846L3 6.41846V20.4185C3 20.9489 3.21071 21.4576 3.58579 21.8327C3.96086 22.2077 4.46957 22.4185 5 22.4185H19C19.5304 22.4185 20.0391 22.2077 20.4142 21.8327C20.7893 21.4576 21 20.9489 21 20.4185V6.41846L18 2.41846H6Z' stroke='%23D2232A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3 6.41846H21' stroke='%23D2232A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 10.4185C16 11.4793 15.5786 12.4967 14.8284 13.2469C14.0783 13.997 13.0609 14.4185 12 14.4185C10.9391 14.4185 9.92172 13.997 9.17157 13.2469C8.42143 12.4967 8 11.4793 8 10.4185' stroke='%23D2232A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      background-color: $white-color;
+    }
+  }
+
+  &__top {
+    background-color: $black-color;
+  }
+
+  &__top-container {
+    @include flex-v-center;
+  }
+
+  &__bottom {
+    padding-right: 100px;
+    background-color: $grey-color;
+    backdrop-filter: blur(2.5px);
+  }
+
+  &__bottom-nav {
+    ul {
+      justify-content: flex-end;
+    }
+
+    li {
+      flex-shrink: 0;
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__bottom-container {
+    @include flex-v-center;
+  }
+
+  &__phone {
+    position: relative;
+    margin-right: auto;
+    margin-left: 100px;
+    padding: 5px 0 5px 44px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    transition: $transition;
+
+    &::before {
+      @include circle(34px);
+
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      background: url("../img/phone-icon.svg") center / 20px no-repeat;
+      background-color: $accent-color;
+      transform: translateY(-50%);
+    }
+
+    @include hover {
+      color: rgba($accent-color, 0.8);
+    }
+  }
+
+  &.is-active {
+    .header {
+      &__top {
+        background-color: $black-color;
+      }
+
+      &__phone-mob {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .header {
+    &__col {
+      width: auto;
+    }
+
+    &__logo {
+      margin-right: 30px;
+
+      img {
+        width: 130px;
+      }
+    }
+
+    &__btn {
+      margin-left: 20px;
+      padding: 24px 20px 24px 45px;
+      width: 115px;
+      background-position: left 12px center;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    &__bottom {
+      overflow: auto;
+      padding-right: 0;
+      background-color: transparent;
+    }
+
+    &__bottom-nav ul {
+      justify-content: center;
+    }
+
+    &__phone-mob {
+      position: relative;
+      display: block;
+      margin-right: 17px;
+      margin-left: auto;
+      padding-left: 28px;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      transition: $transition;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 22px;
+        height: 22px;
+        background: url("../img/phone-circle-icon.svg") center no-repeat;
+        transform: translateY(-50%);
+      }
+    }
+
+    &__top {
+      padding: 11px 0;
+
+      &-container {
+        justify-content: space-between;
+      }
+    }
+
+    &__top-nav {
+      display: none;
+    }
+
+    &__logo {
+      position: relative;
+      z-index: 8;
+    }
+
+    &__btn,
+    &__phone,
+    &__link {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__bottom-logo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    &__logo img {
+      width: 100px;
+    }
+
+    &__bottom-nav {
+      > ul {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .header__logo {
+    margin-right: 3px;
+  }
+}

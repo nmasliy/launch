@@ -1,0 +1,112 @@
+.nav {
+  flex-grow: 1;
+
+  > ul {
+    @include flex-sb;
+
+    > li {
+      margin-right: 30px;
+      color: $white-color;
+
+      > a {
+        display: inline-block;
+        padding: 24px 5px;
+        transition: $transition;
+
+        @include hover {
+          color: rgba($white-color, 0.8);
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.nav-submenu {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.nav-submenu {
+  position: relative;
+  margin-right: 0;
+  min-width: 138px;
+
+  > a {
+    > span {
+      position: relative;
+      padding-right: 20px;
+      padding-left: 16px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 6px;
+        width: 11px;
+        height: 7px;
+        background: url("../img/arrow-down-icon.svg") center no-repeat;
+      }
+    }
+  }
+
+  > ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 3;
+    display: none;
+    border-radius: 2px;
+    padding: 8px;
+    width: 100%;
+    color: #181818;
+    background-color: $white-color;
+
+    > li > a {
+      position: relative;
+      display: inline-block;
+      padding: 8px 0 8px 20px;
+      transition: $transition;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 11px;
+        border-radius: 1px;
+        width: 6px;
+        height: 6px;
+        background-color: #181818;
+        transition: $transition;
+      }
+
+      @include hover {
+        color: $accent-color;
+
+        &::before {
+          background-color: $accent-color;
+        }
+      }
+    }
+  }
+
+  @include hover {
+    background-color: rgba(0, 0, 0, 14%);
+
+    > ul {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .nav > ul > li {
+    margin-right: 20px;
+  }
+
+  .nav .nav-submenu {
+    margin-right: 0;
+  }
+}

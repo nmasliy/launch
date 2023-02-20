@@ -1,0 +1,39 @@
+<header class="header">
+  <div class="header__top">
+    <div class="header__top-container container container--lg">
+      <a class="header__logo" href="./">
+        <img width="203" height="40" src="img/logo.svg" alt="autel">
+      </a>
+      @include('nav.html', {'classes': 'header__top-nav'})
+      <a class="header__btn" href="#">Магазин</a>
+      <!-- <a class="header__phone-mob" href="tel:+380503795456">+38 097 979 54 56</a> -->
+      <button class="burger" aria-label="Открыть меню">
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </div>
+  <div class="header__bottom">
+    <div class="header__bottom-container container">
+      <nav class="header__bottom-nav nav">
+        <ul>
+          <li><a href="#functions">Функции</a></li>
+          <li><a href="#chars">Сравнение</a></li>
+          <li><a href="#">Код диллера 7D</a></li>
+          <li><a href="#study">Обучение</a></li>
+          <li><a href="#partners">Партнеры</a></li>
+        </ul>
+      </nav>
+      <a class="header__phone" href="tel:+380503795456">+38 097 979 54 56</a>
+    </div>
+  </div>
+  <div class="menu">
+    <div class="menu__buttons">
+      <a class="menu__btn btn-outline btn-outline--accent" href="#">Магазин</a>
+    </div>
+    @include('nav.html', {'classes': 'menu__nav'})
+    <a class="menu__phone" href="tel:+380503795456">+38 097 979 54 56</a>
+    <a class="menu__email" href="mailto:info@autel-ukraine.com.ua">info@autel-ukraine.com.ua</a>
+    @include('socials.html')
+  </div>
+  <div class="overlay"></div>
+</header>

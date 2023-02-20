@@ -1,0 +1,90 @@
+.profit {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    @include bg-circle;
+
+    right: -217px;
+    bottom: -278px;
+  }
+
+  &__title {
+    position: relative;
+    padding-right: 200px;
+  }
+
+  &__banner {
+    position: absolute;
+    right: 0;
+    top: 4px;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    border: 1px solid $grey-color;
+    border-radius: 4px;
+    background: rgba(46, 46, 46, 3%);
+  }
+
+  &__img {
+    @include mr(60px);
+
+    position: relative;
+    border-radius: 4px 0 0 4px;
+    width: 100%;
+    max-width: 568px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 4px 0 0 4px;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90.8deg, #0d0d0d 0.65%, rgba(12, 12, 12, 0%) 99.26%);
+    }
+
+    img {
+      border-radius: 4px 0 0 4px;
+    }
+  }
+
+  &__content {
+    padding: 20px 0;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      max-width: 445px;
+    }
+
+    li {
+      @include mr(15px);
+
+      position: relative;
+      padding-left: 26px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 4px;
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: $blue-color;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 32px;
+    max-width: 445px;
+  }
+}

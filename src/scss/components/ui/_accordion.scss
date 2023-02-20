@@ -1,0 +1,66 @@
+.accordion {
+  &__item {
+    @include mb(10px);
+
+    border: 1px solid $grey-color;
+    border-radius: 4px;
+
+    &.is-active {
+      .accordion {
+        &__head {
+          background-color: $dark-blue-color;
+
+          &::after {
+            transform: translateY(-50%) rotate(180deg);
+          }
+        }
+
+        &__content {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__head {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 4px 4px 0 0;
+    padding: 15px 50px 15px 20px;
+    transition: background-color $transition;
+    cursor: pointer;
+    user-select: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      width: 24px;
+      height: 24px;
+      background: url("../img/spoiler-icon.svg") center no-repeat;
+      transform: translateY(-50%);
+      transition: transform $transition;
+    }
+  }
+
+  &__icon {
+    @include flex-all-center;
+    @include circle(43px);
+
+    flex-shrink: 0;
+    margin-right: 28px;
+  }
+
+  &__content {
+    display: none;
+    border-radius: 0 0 4px 4px;
+    padding: 16px 20px 20px 91px;
+    background: rgba(#2d3442, 0.2);
+  }
+
+  &__name {
+    padding-top: 8px;
+  }
+}

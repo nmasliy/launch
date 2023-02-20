@@ -1,0 +1,168 @@
+.brands {
+  &__subtitle {
+    margin: 0 auto 60px;
+    max-width: 527px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 50px;
+    max-width: 1080px;
+  }
+
+  &__item {
+    position: relative;
+    flex-grow: 1;
+    padding: 20px 30px;
+    width: calc(100% / 3);
+    box-shadow: 0 0 0 1px $grey-color;
+
+    p {
+      line-height: 1.35;
+    }
+
+    &:first-child {
+      border-radius: 10px 0 0;
+      width: 48%;
+    }
+
+    &:last-child {
+      border-radius: 0 0 10px;
+    }
+
+    &:nth-child(2) {
+      border-radius: 0 10px;
+    }
+
+    &:nth-child(6) {
+      border-radius: 0 0 0 10px;
+    }
+
+    &--lg {
+      padding: 30px;
+      width: calc(100% / 2);
+    }
+
+    &--sm {
+      padding: 32px 30px;
+      width: calc(100% / 4);
+    }
+  }
+
+  &__name {
+    margin-bottom: 22px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.25;
+    color: $accent-color;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .brands {
+    &__item {
+      border-radius: 0;
+      width: 50%;
+
+      p span {
+        display: block;
+      }
+
+      &:first-child {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 100%;
+      }
+
+      &:nth-child(3) {
+        border-radius: 0;
+      }
+
+      &:nth-child(4) {
+        border-bottom-left-radius: 10px;
+      }
+
+      &:nth-child(5) {
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .brands {
+    &__subtitle {
+      margin-bottom: 24px;
+    }
+
+    &__list {
+      margin-bottom: 34px;
+    }
+
+    &__item {
+      padding: 20px;
+
+      &::before {
+        font-size: 14px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      &:nth-child(2) {
+        padding: 20px;
+        padding-right: 40px;
+      }
+    }
+
+    &__name {
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .brands {
+    &__list {
+      display: block;
+    }
+
+    &__item {
+      padding: 16px 40px 16px 16px;
+      width: 100%;
+
+      &::before {
+        width: 34px;
+        height: 34px;
+        font-size: 22px;
+      }
+    }
+
+    .brands__item {
+      border-radius: 0;
+      padding-right: 40px;
+
+      &:first-child {
+        border-radius: 10px 10px 0 0;
+        padding-right: 10px;
+      }
+
+      &:last-child {
+        border-radius: 0 0 10px 10px;
+      }
+
+      &:nth-child(2) {
+        width: 100%;
+      }
+    }
+
+    .btn {
+      padding-right: 10px;
+      padding-left: 10px;
+      width: 100%;
+    }
+  }
+}

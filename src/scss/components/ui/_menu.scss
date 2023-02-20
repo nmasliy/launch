@@ -1,0 +1,161 @@
+@media screen and (min-width: 1025px) {
+  .menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: var(--header-height);
+    bottom: 0;
+    z-index: 7;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    padding: 24px 15px 77px;
+    background-color: $black-color;
+    opacity: 0;
+    transition: $menu-transition;
+
+    &__buttons {
+      display: grid;
+      align-self: stretch;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 9px;
+    }
+
+    &__nav {
+      margin: 24px 0 42px;
+      width: 100%;
+
+      > ul {
+        display: block;
+
+        > li {
+          margin: 0;
+
+          > a {
+            position: relative;
+            font-size: 20px;
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 20px;
+              border-radius: 2px;
+              width: 12px;
+              height: 12px;
+              background-color: $g1-color;
+            }
+          }
+
+          a {
+            display: block;
+            padding: 16px 0 16px 31px;
+          }
+        }
+      }
+
+      .nav-submenu {
+        > a {
+          transition: $transition;
+
+          &::before {
+            transition: $transition;
+          }
+
+          > span {
+            padding-right: 35px;
+            padding-left: 0;
+
+            &::after {
+              top: 6px;
+              width: 14px;
+              height: 10px;
+              background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1.93299L7.11597 7.81705L1.23191 1.93299' stroke='%23fff' stroke-width='2.79318'/%3E%3C/svg%3E%0A");
+            }
+          }
+        }
+
+        > ul {
+          position: static;
+          color: $white-color;
+          background-color: transparent;
+
+          > li {
+            > a {
+              font-size: 16px;
+
+              &::before {
+                display: none;
+              }
+            }
+          }
+        }
+
+        &.is-active {
+          > a {
+            color: $accent-color;
+
+            &::before {
+              background-color: $accent-color;
+            }
+
+            > span::after {
+              background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1.93299L7.11597 7.81705L1.23191 1.93299' stroke='%23D2232A' stroke-width='2.79318'/%3E%3C/svg%3E%0A");
+              transform: rotate(180deg);
+            }
+          }
+
+          ul {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &__phone {
+      margin-bottom: 6px;
+      font-size: 20px;
+      line-height: 1.4;
+      text-align: center;
+      color: #f4f4f4;
+    }
+
+    &__email {
+      margin-bottom: 18px;
+      font-weight: 500;
+      font-size: 16px;
+      text-align: center;
+      color: #f4f4f4;
+    }
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: var(--header-height);
+    bottom: 0;
+    z-index: 5;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000, 0.5);
+    opacity: 0;
+    transition: $menu-transition;
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 2px;
+  padding: 20px 50px;
+  min-width: 240px;
+  font-family: $font-family;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white-color;
+  background: transparent;
+  background-color: $accent-color;
+  transition: $transition;
+  cursor: pointer;
+
+  &:focus,
+  &:active {
+    box-shadow: none;
+    background-color: rgba(228, 37, 43, 80%);
+  }
+
+  @include hover {
+    &:hover {
+      box-shadow: 0 1px 25px rgba(210, 35, 42, 80%);
+    }
+  }
+}
+
+.btn-link {
+  border: none;
+  padding: 0;
+  font-family: $font-family;
+  font-size: 20px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: $white-color;
+  background: transparent;
+  transition: $transition;
+  cursor: pointer;
+
+  @include hover {
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.btn-outline {
+  border: 2px solid $g1-color;
+  padding: 16px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  background-color: $black-color;
+
+  &--accent {
+    border-color: $accent-color;
+    border-radius: 2px;
+    color: $accent-color;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .btn-link {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .btn {
+    padding: 19px 25px;
+    min-width: 192px;
+    font-size: 14px;
+  }
+}

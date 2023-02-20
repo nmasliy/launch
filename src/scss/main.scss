@@ -1,0 +1,26 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/ui";
+@import "./components/header";
+@import "./components/hero";
+@import "./components/video";
+@import "./components/brands";
+@import "./components/chars";
+@import "./components/garanty";
+@import "./components/profit";
+@import "./components/functions";
+@import "./components/compare";
+@import "./components/consult";
+@import "./components/why";
+@import "./components/attention";
+@import "./components/benefits";
+@import "./components/study";
+@import "./components/partners";
+@import "./components/lead";
+@import "./components/thanks";
+@import "./components/footer";

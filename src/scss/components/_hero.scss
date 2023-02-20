@@ -1,0 +1,245 @@
+.hero {
+  padding-top: 24px;
+  background: url("../img/hero-bg.jpg") center bottom / cover no-repeat;
+
+  &__title {
+    margin-bottom: 18px;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.15;
+    color: $white-color;
+  }
+
+  &__subtitle {
+    margin-bottom: 28px;
+    font-size: 18px;
+    line-height: 1.4;
+    color: $white-color;
+  }
+
+  &__img-mob {
+    display: none;
+  }
+
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    max-width: 1000px;
+  }
+
+  &__item {
+    @include mr(60px);
+
+    picture {
+      display: flex;
+      margin-bottom: 3px;
+    }
+  }
+
+  &__item-title {
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+  }
+}
+
+.hero-benefits {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid $grey-color;
+  border-radius: 4px;
+  padding: 31px 40px 36px 58px;
+  background: rgba($grey-color, 0.05);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 78px;
+    top: -5px;
+    border-radius: 4px 4px 0 0;
+    width: 164px;
+    height: 37px;
+    background: $blue-color;
+    filter: blur(40px);
+  }
+
+  &__head {
+    margin-right: 105px;
+    max-width: 220px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.25;
+
+    span {
+      font-size: 28px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1.6fr 1fr 1fr 1.1fr;
+    width: 100%;
+    gap: 30px 60px;
+  }
+
+  &__item {
+    @include flex-h-center;
+
+    min-width: 133px;
+  }
+
+  &__icon {
+    @include circle(40px);
+    @include flex-all-center;
+
+    flex-shrink: 0;
+  }
+
+  &__text {
+    margin-left: 18px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hero {
+    padding-top: 25px;
+    padding-bottom: 80px;
+
+    &::after {
+      display: none;
+    }
+
+    &__inner {
+      &::before {
+        left: 0;
+        right: 0;
+        top: 224px;
+        bottom: auto;
+        margin: 0 auto;
+        width: 222px;
+        height: 222px;
+        filter: blur(34px);
+      }
+    }
+
+    &__title {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 400px;
+      font-size: 36px;
+      line-height: 1.2;
+
+      span {
+        font-size: 36px;
+      }
+    }
+
+    &__subtitle {
+      margin-right: auto;
+      margin-bottom: 22px;
+      margin-left: auto;
+      max-width: 277px;
+      font-size: 16px;
+      line-height: 1.3;
+    }
+  }
+
+  .hero-benefits {
+    top: -84px;
+
+    &__list {
+      grid-template-columns: 1fr 1fr;
+      margin: 0 auto;
+      border: none;
+      padding: 0;
+      max-width: 700px;
+      backdrop-filter: none;
+      gap: 0;
+    }
+
+    &__item {
+      display: block;
+      padding: 20px;
+      min-width: auto;
+      box-shadow: 0 0 0 1px #343535;
+      background: #131010;
+
+      &:first-child {
+        order: 2;
+        border-bottom-left-radius: 10px;
+      }
+
+      &:last-child {
+        order: 4;
+        border-bottom-right-radius: 10px;
+      }
+
+      &:nth-child(2) {
+        order: -1;
+        border-top-left-radius: 10px;
+      }
+
+      &:nth-child(3) {
+        border-top-right-radius: 10px;
+      }
+    }
+
+    &__icon {
+      margin-bottom: 8px;
+      width: 30px;
+      height: 30px;
+
+      img {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &__text {
+      margin-left: 0;
+      font-weight: 500;
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    &__subtitle {
+      line-height: 1.4;
+    }
+
+    &__img {
+      display: none;
+
+      &-mob {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero {
+    padding-bottom: 60px;
+  }
+
+  .hero-benefits {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .hero-benefits {
+    &__text {
+      font-size: 12px;
+    }
+  }
+}
