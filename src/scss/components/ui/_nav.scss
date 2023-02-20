@@ -14,7 +14,7 @@
         transition: $transition;
 
         @include hover {
-          color: rgba($white-color, 0.8);
+          color: $accent-color;
         }
       }
 

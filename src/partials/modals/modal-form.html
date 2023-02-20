@@ -1,0 +1,26 @@
+<div class="modal modal-form" id="modal-form" aria-hidden="true">
+  <div class="modal__wrapper">
+    <div class="modal__inner modal-form__inner">
+      <form class="modal-form__form form" method="post">
+        <h3 class="modal-form__title">Получить консультацию
+          специалиста</h3>
+        <label class="form__item">
+          <input type="text" class="form__input form__input--name" placeholder=" ">
+          <span class="form__placeholder">Ваше имя</span>
+        </label>
+        <label class="form__item">
+          <input type="tel" class="form__input form__input--tel" placeholder=" ">
+          <span class="form__placeholder">Номер телефона</span>
+        </label>
+        <label class="form__item">
+          <input type="email" class="form__input form__input--email" placeholder=" ">
+          <span class="form__placeholder">Ваш email</span>
+        </label>
+        <button class="form__btn btn">Отправить</button>
+        <div class="form__caption">Нажимая на&nbsp;кнопку я&nbsp;соглашаюсь
+          на&nbsp;<a href="#" target="_blank">обработку персональных данных</a></div>
+      </form>
+      <button class="modal__close" data-modal-close>@include('../../img/close-icon.svg')</button>
+    </div>
+  </div>
+</div>

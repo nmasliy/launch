@@ -16,13 +16,12 @@
 
   &:focus,
   &:active {
-    box-shadow: none;
-    background-color: rgba(228, 37, 43, 80%);
+    transform: scale(1.05);
   }
 
   @include hover {
     &:hover {
-      box-shadow: 0 1px 25px rgba(210, 35, 42, 80%);
+      transform: scale(1.05);
     }
   }
 }

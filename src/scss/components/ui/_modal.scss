@@ -40,8 +40,8 @@
 
   &__close {
     position: absolute;
-    right: 62px;
-    top: 62px;
+    right: 50px;
+    top: 40px;
     outline: transparent;
     border: none;
     box-shadow: none;
@@ -158,27 +158,43 @@
   line-height: 1.2;
 
   &__title {
-    font-weight: 500;
-    font-size: 40px;
-
     &-mob {
       display: none;
     }
   }
 
+  &__img {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 3px;
+    padding: 14px 30px;
+    text-align: center;
+    background: rgba(44, 44, 44, 50%);
+
+    &::after {
+      @include bg-circle(125px);
+
+      left: 50%;
+      bottom: -77px;
+      transform: translateX(-50%);
+    }
+  }
+
   &__subtitle {
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 1.1;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.4;
     color: $accent-color;
   }
 
   tr {
-    border-top: 1px solid rgba($g2-color, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 5%);
 
     &.modal-table__spoiler {
       border: none;
-      border-bottom: 4px solid #0a0a0a;
+      border-bottom: 4px solid $black-color;
 
       td {
         vertical-align: middle;
@@ -192,6 +208,10 @@
     td {
       padding-bottom: 22px;
     }
+  }
+
+  table {
+    width: 100%;
   }
 
   td,
@@ -210,6 +230,10 @@
     &.modal-table__item-top {
       vertical-align: top;
     }
+  }
+
+  td:first-child {
+    font-weight: 700;
   }
 
   th:first-child {
@@ -245,6 +269,47 @@
 
   &__item-sm {
     font-size: 14px;
+  }
+
+  .modal-table__spoiler td {
+    font-weight: 400;
+  }
+}
+
+.modal-form {
+  .modal__close {
+    right: 10px;
+    top: 10px;
+  }
+
+  .modal-form__form {
+    border-radius: 8px;
+    padding: 50px;
+  }
+
+  &__form {
+    margin: auto;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  &__title {
+    margin-bottom: 18px;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__inner {
+    position: relative;
+    overflow: auto;
+    margin: auto;
+    border-radius: 8px;
+    padding: 0;
+    height: auto;
+    max-width: 420px;
+    max-height: 100%;
   }
 }
 
