@@ -155,6 +155,10 @@
   .block-title {
     font-size: 18px;
   }
+
+  .top-wrapper {
+    background: url("../img/hero-bg.jpg") center bottom / cover no-repeat;
+  }
 }
 
 @media screen and (max-width: 768px) {

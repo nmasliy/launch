@@ -5,10 +5,12 @@
 
 <body>
   <div class="page-wrapper">
-    @include('partials/header.html')
+    <div class="top-wrapper">
+      @include('partials/header.html')
+      @include('partials/hero.html')
+    </div>
 
     <main class="main">
-      @include('partials/hero.html')
       @include('partials/profit.html')
       @include('partials/brands.html')
       @include('partials/functions.html')

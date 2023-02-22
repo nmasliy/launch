@@ -1,6 +1,8 @@
 .hero {
   padding-top: 24px;
-  background: url("../img/hero-bg.jpg") center bottom / cover no-repeat;
+  background:
+    url("../img/bg-elements.svg") top 36% right -42px no-repeat,
+    url("../img/hero-bg.jpg") center bottom / cover no-repeat;
 
   &__title {
     margin-bottom: 18px;
@@ -42,22 +44,26 @@
   &__item-title {
     font-weight: 700;
     font-size: 22px;
+    white-space: nowrap;
     text-align: center;
   }
 }
 
 .hero-benefits {
   position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  border: 1px solid $grey-color;
-  border-radius: 4px;
-  padding: 31px 40px 36px 58px;
-  background: rgba($grey-color, 0.05);
 
-  &::before {
-    content: "";
+  &__inner {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid $grey-color;
+    border-radius: 4px;
+    padding: 31px 40px 36px 58px;
+    background: rgba($grey-color, 0.05);
+    backdrop-filter: blur(50px);
+  }
+
+  &__panel {
     position: absolute;
     left: 78px;
     top: -5px;
@@ -65,7 +71,6 @@
     width: 164px;
     height: 37px;
     background: $blue-color;
-    filter: blur(40px);
   }
 
   &__head {
@@ -106,53 +111,59 @@
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .hero-benefits {
+    padding: 20px 30px;
+
+    &__panel {
+      top: 16px;
+    }
+
+    &__list {
+      gap: 30px;
+    }
+
+    &__head {
+      margin-right: 30px;
+      font-size: 18px;
+
+      span {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .hero {
     padding-top: 25px;
     padding-bottom: 80px;
+    background: url("../img/bg-elements.svg") top 6% right -91px / 2500px no-repeat;
 
-    &::after {
-      display: none;
+    &__item-title {
+      font-size: 18px;
     }
 
-    &__inner {
-      &::before {
-        left: 0;
-        right: 0;
-        top: 224px;
-        bottom: auto;
-        margin: 0 auto;
-        width: 222px;
-        height: 222px;
-        filter: blur(34px);
+    &__item {
+      @include mr(30px);
+
+      picture {
+        margin-bottom: 14px;
       }
     }
 
     &__title {
-      margin-right: auto;
-      margin-left: auto;
-      max-width: 400px;
-      font-size: 36px;
-      line-height: 1.2;
-
-      span {
-        font-size: 36px;
-      }
+      margin-bottom: 8px;
+      font-size: 26px;
+      line-height: 1.25;
     }
 
     &__subtitle {
-      margin-right: auto;
-      margin-bottom: 22px;
-      margin-left: auto;
-      max-width: 277px;
-      font-size: 16px;
-      line-height: 1.3;
+      margin-bottom: 35px;
     }
   }
 
   .hero-benefits {
-    top: -84px;
-
     &__list {
       grid-template-columns: 1fr 1fr;
       margin: 0 auto;
@@ -212,16 +223,12 @@
 @media screen and (max-width: 768px) {
   .hero {
     &__subtitle {
-      line-height: 1.4;
+      margin-bottom: 20px;
+      font-size: 16px;
     }
 
-    &__img {
-      display: none;
-
-      &-mob {
-        display: block;
-        text-align: center;
-      }
+    &__item-title {
+      font-size: 16px;
     }
   }
 }
@@ -237,6 +244,16 @@
 }
 
 @media screen and (max-width: 376px) {
+  .hero {
+    &__item {
+      @include mr(15px);
+    }
+
+    &__item-title {
+      font-size: 15px;
+    }
+  }
+
   .hero-benefits {
     &__text {
       font-size: 12px;
