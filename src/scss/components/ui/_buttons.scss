@@ -60,6 +60,12 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .btn {
+    padding: 20px 30px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .btn-link {
     font-size: 16px;
@@ -68,7 +74,7 @@
 
 @media screen and (max-width: 576px) {
   .btn {
-    padding: 19px 25px;
+    padding: 17px 30px;
     min-width: 192px;
     font-size: 14px;
   }

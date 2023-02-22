@@ -29,9 +29,8 @@
   }
 
   &__img {
-    @include mr(60px);
-
     position: relative;
+    margin-right: 60px;
     border-radius: 4px 0 0 4px;
     width: 100%;
     max-width: 568px;
@@ -55,7 +54,7 @@
   }
 
   &__content {
-    padding: 20px 0;
+    padding: 20px 15px 20px 0;
 
     ul {
       display: flex;
@@ -86,5 +85,87 @@
   &__subtitle {
     margin-bottom: 32px;
     max-width: 445px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .profit {
+    &__img {
+      margin-right: 40px;
+    }
+
+    &__content {
+      ul {
+        margin-bottom: 40px;
+      }
+
+      li {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profit {
+    &__title {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      padding-right: 0;
+    }
+
+    &__subtitle {
+      margin: 0 auto 32px;
+      max-width: 245px;
+    }
+
+    &__img {
+      margin: 0 auto;
+    }
+
+    &__banner {
+      position: static;
+      margin-bottom: 24px;
+    }
+
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__content {
+      padding: 0 15px 60px;
+      text-align: center;
+
+      li {
+        text-align: left;
+      }
+    }
+
+    &__btn {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .profit {
+    &__content {
+      max-width: 290px;
+
+      ul {
+        display: block;
+      }
+
+      li {
+        @include mb(16px);
+        @include mr(0);
+
+        &::before {
+          width: 6px;
+          height: 6px;
+        }
+      }
+    }
   }
 }

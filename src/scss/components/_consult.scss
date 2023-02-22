@@ -1,6 +1,7 @@
 .consult {
   position: relative;
   overflow: hidden;
+  padding: 60px 0;
 
   &::before {
     @include bg-circle(650px);
@@ -24,5 +25,30 @@
   &__form {
     width: 100%;
     max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .consult {
+    &::before {
+      left: auto;
+      right: -50px;
+      bottom: -130px;
+    }
+
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__subtitle {
+      margin: 0 auto;
+      max-width: 260px;
+    }
+
+    &__info {
+      margin-bottom: 32px;
+      padding-bottom: 0;
+      text-align: center;
+    }
   }
 }

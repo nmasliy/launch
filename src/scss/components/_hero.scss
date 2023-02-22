@@ -113,10 +113,12 @@
 
 @media screen and (max-width: 1280px) {
   .hero-benefits {
-    padding: 20px 30px;
+    &__inner {
+      padding: 20px 30px;
+    }
 
     &__panel {
-      top: 16px;
+      left: 38px;
     }
 
     &__list {
@@ -136,9 +138,7 @@
 
 @media screen and (max-width: 1024px) {
   .hero {
-    padding-top: 25px;
-    padding-bottom: 80px;
-    background: url("../img/bg-elements.svg") top 6% right -91px / 2500px no-repeat;
+    background: url("../img/bg-elements.svg") top 7% right -91px / 2500px no-repeat;
 
     &__item-title {
       font-size: 18px;
@@ -164,12 +164,36 @@
   }
 
   .hero-benefits {
+    margin: 0 auto;
+    max-width: 700px;
+
+    &__panel {
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+
+    &__head {
+      margin: 0 auto;
+      padding: 12px 15px 15px;
+      font-size: 16px;
+      text-align: center;
+
+      span {
+        font-size: 20px;
+      }
+    }
+
+    &__inner {
+      display: block;
+      border-radius: 10px;
+      padding: 0;
+    }
+
     &__list {
       grid-template-columns: 1fr 1fr;
-      margin: 0 auto;
       border: none;
       padding: 0;
-      max-width: 700px;
       backdrop-filter: none;
       gap: 0;
     }
@@ -178,43 +202,32 @@
       display: block;
       padding: 20px;
       min-width: auto;
-      box-shadow: 0 0 0 1px #343535;
-      background: #131010;
-
-      &:first-child {
-        order: 2;
-        border-bottom-left-radius: 10px;
-      }
+      box-shadow: 0 0 0 1px $grey-color;
+      background: #0d0d0d;
 
       &:last-child {
-        order: 4;
         border-bottom-right-radius: 10px;
       }
 
-      &:nth-child(2) {
-        order: -1;
-        border-top-left-radius: 10px;
-      }
-
       &:nth-child(3) {
-        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
       }
     }
 
     &__icon {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       width: 30px;
       height: 30px;
 
       img {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
       }
     }
 
     &__text {
       margin-left: 0;
-      font-weight: 500;
+      max-width: 127px;
       font-size: 14px;
     }
   }
@@ -223,7 +236,7 @@
 @media screen and (max-width: 768px) {
   .hero {
     &__subtitle {
-      margin-bottom: 20px;
+      margin-bottom: 27px;
       font-size: 16px;
     }
 
@@ -233,30 +246,18 @@
   }
 }
 
-@media screen and (max-width: 576px) {
-  .hero {
-    padding-bottom: 60px;
-  }
-
-  .hero-benefits {
-    padding-bottom: 0;
-  }
-}
-
 @media screen and (max-width: 376px) {
   .hero {
+    &__title {
+      font-size: 24px;
+    }
+
     &__item {
       @include mr(15px);
     }
 
     &__item-title {
       font-size: 15px;
-    }
-  }
-
-  .hero-benefits {
-    &__text {
-      font-size: 12px;
     }
   }
 }
