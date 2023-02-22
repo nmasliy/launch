@@ -6,10 +6,13 @@
 
   &__title {
     margin-bottom: 18px;
-    font-weight: 700;
     font-size: 56px;
     line-height: 1.15;
     color: $white-color;
+
+    div {
+      font-weight: 700;
+    }
   }
 
   &__subtitle {

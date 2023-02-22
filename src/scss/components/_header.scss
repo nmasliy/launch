@@ -45,7 +45,8 @@
 
   &__bottom-nav {
     ul {
-      justify-content: flex-end;
+      justify-content: center;
+      margin-left: 150px;
     }
 
     li {
@@ -135,7 +136,7 @@
     }
 
     &__bottom-nav ul {
-      justify-content: center;
+      margin-left: 0;
       font-size: 12px;
     }
 

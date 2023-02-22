@@ -134,7 +134,7 @@ const images = () => {
         isProd,
         image([
           image.mozjpeg({
-            quality: 80,
+            quality: 90,
             progressive: true,
           }),
           image.optipng({
