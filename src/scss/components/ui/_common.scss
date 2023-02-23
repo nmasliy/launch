@@ -162,6 +162,15 @@
 }
 
 @media screen and (max-width: 768px) {
+  .slider-pagination {
+    bottom: 0;
+
+    .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
   .banner {
     border-radius: 2px;
   }

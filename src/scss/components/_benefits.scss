@@ -70,3 +70,70 @@
     margin-bottom: 24px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .benefits {
+    &__subtitle {
+      margin-bottom: 32px;
+    }
+
+    &__item {
+      padding: 16px 20px;
+    }
+
+    &__info p {
+      font-size: 14px;
+    }
+
+    &__name {
+      margin-bottom: 16px;
+    }
+
+    &__icon {
+      margin-right: 12px;
+      width: 30px;
+      height: 30px;
+
+      img {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .benefits {
+    &::before {
+      left: auto;
+      right: -80px;
+      bottom: -40px;
+      width: 310px;
+      height: 310px;
+    }
+
+    &::after {
+      @include bg-circle(528px, 100px, 0.35);
+
+      left: -224px;
+      top: -450px;
+    }
+
+    &__list {
+      display: block;
+    }
+
+    &__item {
+      @include mb(12px);
+
+      border-radius: 4px;
+    }
+
+    &__title,
+    &__subtitle {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 280px;
+    }
+  }
+}

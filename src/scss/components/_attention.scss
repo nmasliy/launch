@@ -7,6 +7,11 @@
     max-width: 700px;
   }
 
+  &__accordion {
+    position: relative;
+    z-index: 2;
+  }
+
   &__inner {
     position: relative;
     display: grid;
@@ -31,12 +36,63 @@
 
 @media screen and (max-width: 1024px) {
   .attention {
+    position: relative;
     padding-top: 90px;
+    padding-bottom: 60px;
+
+    &::before {
+      @include bg-circle(528px, 100px, 0.15);
+
+      right: -239px;
+      top: -450px;
+    }
+
+    &__inner {
+      display: block;
+
+      &::before {
+        left: -150px;
+        top: 0;
+        bottom: auto;
+        width: 440px;
+        height: 440px;
+      }
+    }
+
+    &__img {
+      margin-bottom: -48px;
+      text-align: center;
+
+      img {
+        max-width: 65%;
+      }
+
+      picture {
+        justify-content: center;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 768px) {
   .attention {
     padding-top: 60px;
+
+    &__head {
+      margin-bottom: 40px;
+      max-width: 280px;
+    }
+
+    &__img {
+      margin-bottom: -20px;
+    }
+
+    &__inner {
+      &::before {
+        left: -131px;
+        width: 289px;
+        height: 289px;
+      }
+    }
   }
 }

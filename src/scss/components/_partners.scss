@@ -1,16 +1,7 @@
 .partners {
-  &__inner {
-  }
-
   &__title {
     margin: 0 auto 60px;
     max-width: 700px;
-  }
-
-  &__content {
-  }
-
-  &__list {
   }
 
   &__item {
@@ -20,7 +11,9 @@
       filter: grayscale(1) brightness(50%);
       transition: filter $transition;
 
-      @include hover {
+      &:hover,
+      &:focus,
+      &:active {
         filter: grayscale(0) brightness(100%);
       }
     }
@@ -58,6 +51,38 @@
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .partners {
+    &__content {
+      margin: 0 -15px;
+      padding-right: 15px;
+      padding-bottom: 60px;
+    }
+
+    &__item {
+      width: auto;
+
+      > picture:first-child {
+        margin-bottom: 35px;
+      }
+
+      img {
+        width: auto;
+        max-height: 45px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 35px;
+    }
+
+    &__pagination {
+      bottom: -5px;
+      display: block;
     }
   }
 }

@@ -2,7 +2,18 @@ import Swiper, { Pagination, Navigation } from 'swiper';
 import SimpleBar from 'simplebar';
 Swiper.use([Pagination, Navigation]);
 
-function initMobileSlider(parent, wrapper, items, breakpoint = 768) {
+function initMobileSlider(parent, wrapper, items, breakpoint = 768, options) {
+  if (!options) {
+    options = {
+      slidesPerView: 'auto',
+      spaceBetween: 24,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    }
+  }
+
   if (window.innerWidth <= breakpoint) {
     const $parent = document.querySelector(parent);
     const $wrapper = $parent.querySelector(wrapper);
@@ -13,26 +24,9 @@ function initMobileSlider(parent, wrapper, items, breakpoint = 768) {
     $wrapper.classList.remove(wrapper.replace('.', ''));
     $items.forEach((slide) => slide.classList.add('swiper-slide'));
 
-    const swiper = new Swiper(parent, {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
+    const swiper = new Swiper(parent, options);
   }
 }
-
-// const functionsSwiper = new Swiper('.functions__slider', {
-//   spaceBetween: 30,
-// pagination: {
-//   el: '.swiper-pagination',
-//   clickable: true,
-// },
-// });
-
-// initMobileSlider(".comfort__slider", ".comfort__list", ".comfort__item");
 
 function initWhySlider() {
   const pagination = document.querySelector('.why-pagination');
@@ -99,6 +93,25 @@ function initWhySlider() {
   });
 
 }
+
+initMobileSlider(".study__slider", ".study__images", ".study__img", 768, {
+  slidesPerView: 1.3,
+  spaceBetween: 24,
+  pagination: {
+    el: '.slider-pagination',
+    clickable: true,
+  },
+});
+
+initMobileSlider(".partners__content", ".partners__list", ".partners__item", 1024, {
+  slidesPerView: 'auto',
+  spaceBetween: 24,
+  pagination: {
+    el: '.slider-pagination',
+    clickable: true,
+  },
+  freeMode: true,
+});
 
 
 initWhySlider();

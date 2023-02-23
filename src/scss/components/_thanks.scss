@@ -45,3 +45,18 @@
     max-width: 352px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .thanks {
+    padding: 60px 0;
+
+    &__inner {
+      padding: 60px 20px;
+      min-height: auto;
+    }
+
+    &__subtitle {
+      margin-bottom: 40px;
+    }
+  }
+}

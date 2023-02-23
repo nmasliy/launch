@@ -26,6 +26,10 @@
     gap: 24px;
   }
 
+  &__pagination {
+    display: none;
+  }
+
   &__img {
     picture {
       display: flex;
@@ -39,7 +43,8 @@
   &__benefits {
     counter-reset: study;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    grid-template-columns: 250px 170px 270px 235px;
     margin-bottom: 70px;
     border: 1px solid $grey-color;
     border-radius: 8px;
@@ -59,6 +64,71 @@
       content: "0" counter(study);
       flex-shrink: 0;
       margin-right: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .study {
+    &__benefits {
+      grid-template-columns: auto 180px auto auto;
+      margin-bottom: 40px;
+      padding: 16px;
+      gap: 16px 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .study {
+    padding-top: 0;
+
+    &__benefits {
+      display: block;
+    }
+
+    &__item {
+      @include mb(16px);
+
+      align-items: center;
+      max-width: 300px;
+      font-size: 14px;
+
+      &::before {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .study {
+    padding-top: 0;
+
+    &__slider {
+      margin: 0 -15px 32px;
+      padding: 0 15px 32px;
+
+      .study__pagination {
+        bottom: -5px;
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .study {
+    &__title {
+      margin: 0 auto 12px;
+      max-width: 310px;
+    }
+
+    &__subtitle {
+      margin: 0 auto 32px;
+      max-width: 310px;
     }
   }
 }

@@ -92,7 +92,8 @@
   }
 
   &__title {
-    margin-bottom: 50px;
+    margin: 0 auto 50px;
+    max-width: 700px;
   }
 
   &__list {
@@ -104,9 +105,9 @@
   &__item {
     position: relative;
     width: calc(100% / 4);
-    box-shadow: 0 0 0 1px $g2-color;
+    box-shadow: 0 0 0 1px $grey-color;
     text-align: center;
-    background-color: #141111;
+    background: rgba(46, 46, 46, 20%);
 
     &:nth-child(12) ~ .modal-complect__item {
       display: none;
@@ -125,22 +126,21 @@
     right: 9px;
     top: 14px;
     font-size: 14px;
-    color: $g2-color;
+    color: $grey-color;
   }
 
   &__img {
     @include flex-all-center;
 
+    display: flex;
+    justify-content: center;
     margin-bottom: 15px;
     min-height: 110px;
   }
 
   &__name {
     margin: auto 0;
-    padding: 0 28px;
-    font-size: 14px;
-    line-height: 1.4;
-    color: $g1-color;
+    padding: 0 29px;
   }
 }
 
@@ -278,8 +278,8 @@
 
 .modal-form {
   .modal__close {
-    right: 10px;
-    top: 10px;
+    right: 22px;
+    top: 4px;
   }
 
   .modal-form__form {
@@ -301,15 +301,16 @@
     text-transform: uppercase;
   }
 
-  &__inner {
+  .modal__inner {
     position: relative;
     overflow: auto;
     margin: auto;
     border-radius: 8px;
-    padding: 0;
+    padding: 0 15px;
     height: auto;
     max-width: 420px;
     max-height: 100%;
+    background-color: transparent;
   }
 }
 
@@ -343,9 +344,24 @@
 }
 
 @media screen and (max-width: 768px) {
-  #modal-complect-1 {
-    .modal-complect__btn {
-      display: block;
+  .modal-form {
+    &__title {
+      margin-bottom: 24px;
+      font-size: 16px;
+    }
+
+    .modal__close {
+      top: -8px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    .form {
+      border: none;
+      padding: 35px;
     }
   }
 
@@ -358,11 +374,15 @@
       }
     }
 
+    &__list {
+      justify-content: flex-start;
+    }
+
     &__item {
       width: 50%;
 
       &:nth-child(10) ~ .modal-complect__item {
-        display: none;
+        // display: none;
       }
     }
   }
@@ -526,6 +546,7 @@
 
   .modal-complect {
     &__name {
+      padding: 0 26px;
       font-size: 12px;
     }
 
@@ -552,7 +573,7 @@
 @media screen and (max-width: 376px) {
   .modal-complect {
     &__name {
-      padding: 0 18px;
+      padding: 0 12px;
     }
   }
 }

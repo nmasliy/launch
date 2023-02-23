@@ -22,11 +22,6 @@
     padding: 27px;
     text-align: center;
     background: rgba(46, 46, 46, 5%);
-
-    p {
-      font-size: 14px;
-      line-height: 1.4;
-    }
   }
 
   &__img {
@@ -60,19 +55,21 @@
 
     &__list {
       display: block;
+      margin-bottom: 40px;
     }
 
     &__item {
       margin: 0 auto 24px;
+      padding: 20px;
       max-width: 340px;
-    }
-  }
-}
 
-@media screen and (max-width: 476px) {
-  .garanty {
-    &__item {
-      padding: 36px;
+      p {
+        font-size: 14px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
