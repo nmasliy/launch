@@ -9,6 +9,13 @@
     bottom: -533px;
   }
 
+  &::after {
+    @include bg-circle(431px);
+
+    right: -35px;
+    top: -400px;
+  }
+
   &__inner {
     position: relative;
     margin: 0 auto;
