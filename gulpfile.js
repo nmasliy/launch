@@ -153,7 +153,8 @@ const webpImages = () => {
 };
 
 const notOptimizedImages = () => {
-  return src([`${paths.srcImgFolder}/cases/*.*`])
+  return src([`${paths.srcImgFolder}/not-optimized/*.*`])
+  .pipe(webp())
   .pipe(dest(paths.buildImgFolder));
 }
 
