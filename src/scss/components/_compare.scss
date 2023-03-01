@@ -108,19 +108,36 @@
 
     &__table {
       font-size: 12px;
+
+      td {
+        padding: 10px 4px;
+
+        &:first-child {
+          padding: 10px;
+        }
+      }
     }
 
-    &__table td {
-      padding: 10px 4px;
+    .compare__name {
+      padding: 10px;
+    }
 
-      &:first-child {
-        padding: 10px;
-      }
+    &__title,
+    &__subtitle {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 292px;
     }
 
     &__table-title,
     &__name {
       font-size: 12px;
     }
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .compare__table td {
+    font-size: 11px;
   }
 }

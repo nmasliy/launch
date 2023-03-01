@@ -19,12 +19,19 @@
   }
 
   &__item {
+    position: relative;
+    padding-bottom: 52%; // responsive img ratio
     picture {
       display: flex;
     }
 
     img {
+      position: absolute;
+      left: 0;
+      top: 0;
       border-radius: 4px;
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -136,7 +143,7 @@
     }
 
     &__slider {
-      margin-bottom: 47px;
+      margin-bottom: 40px;
       padding-bottom: 0;
 
       .slider-pagination {

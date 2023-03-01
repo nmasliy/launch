@@ -39,7 +39,7 @@
 
   &__bottom {
     padding-right: 100px;
-    background-color: $grey-color;
+    background-color: rgba(#343535, 0.5);
     backdrop-filter: blur(2.5px);
   }
 
@@ -65,8 +65,7 @@
 
   &__phone {
     position: relative;
-    margin-right: auto;
-    margin-left: 100px;
+    margin: 0 70px 0 28px;
     padding: 5px 0 5px 44px;
     font-weight: 500;
     line-height: 1.25;
@@ -107,6 +106,11 @@
   .header {
     &__col {
       width: auto;
+    }
+
+    &__phone {
+      margin-right: 0;
+      margin-left: 70px;
     }
 
     &__logo {

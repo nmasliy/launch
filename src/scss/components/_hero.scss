@@ -111,6 +111,10 @@
 
   &__text {
     margin-left: 18px;
+
+    &--center {
+      align-self: center;
+    }
   }
 }
 
@@ -135,6 +139,10 @@
       span {
         font-size: 24px;
       }
+    }
+
+    &__text--center {
+      align-self: flex-start;
     }
   }
 }
@@ -246,6 +254,13 @@
     &__item-title {
       font-size: 16px;
     }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .hero__subtitle {
+    margin: 0 auto 27px;
+    max-width: 290px;
   }
 }
 
