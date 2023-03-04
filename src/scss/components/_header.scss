@@ -1,4 +1,8 @@
 .header {
+  position: fixed;
+  left: 0;
+  z-index: 15;
+  width: 100%;
   font-weight: 500;
   font-size: 14px;
   line-height: 1;
@@ -23,14 +27,13 @@
     transition: $transition;
 
     &:hover {
-      color: $accent-color;
-      background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 2.41846L3 6.41846V20.4185C3 20.9489 3.21071 21.4576 3.58579 21.8327C3.96086 22.2077 4.46957 22.4185 5 22.4185H19C19.5304 22.4185 20.0391 22.2077 20.4142 21.8327C20.7893 21.4576 21 20.9489 21 20.4185V6.41846L18 2.41846H6Z' stroke='%23D2232A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3 6.41846H21' stroke='%23D2232A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 10.4185C16 11.4793 15.5786 12.4967 14.8284 13.2469C14.0783 13.997 13.0609 14.4185 12 14.4185C10.9391 14.4185 9.92172 13.997 9.17157 13.2469C8.42143 12.4967 8 11.4793 8 10.4185' stroke='%23D2232A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-      background-color: $white-color;
+      filter: drop-shadow(0 0 22px rgba(227, 6, 19, 68%));
     }
   }
 
   &__top {
-    background-color: $black-color;
+    border-bottom: 5px solid $accent-color;
+    background-color: #141414;
   }
 
   &__top-container {
@@ -117,7 +120,7 @@
       margin-right: 30px;
 
       img {
-        width: 130px;
+        width: 197px;
       }
     }
 
@@ -167,8 +170,8 @@
     }
 
     &__top {
-      padding: 0;
-      background: rgba($black-color, 0.5);
+      border-bottom: 1px solid $grey-color;
+      padding: 8px 0;
 
       &-container {
         justify-content: space-between;
@@ -185,12 +188,7 @@
     }
 
     &__btn {
-      margin-right: 16px;
-      margin-left: auto;
-      padding: 15px 45px 15px 20px;
-      font-size: 12px;
-      background-position: right 20px center;
-      background-size: 16px;
+      display: none;
     }
 
     &__phone,
@@ -208,20 +206,10 @@
 
 @media screen and (max-width: 576px) {
   .header {
-    &__logo img {
-      width: 100px;
-    }
-
     &__bottom-nav {
       > ul {
         justify-content: flex-start;
       }
     }
-  }
-}
-
-@media screen and (max-width: 376px) {
-  .header__logo {
-    margin-right: 3px;
   }
 }

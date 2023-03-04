@@ -5,12 +5,29 @@
   const $burger = document.querySelector('.burger');
   const $close = document.querySelector('.menu__close');
   const $overlay = document.querySelector('.overlay');
-  const $menuItems = document.querySelectorAll('.menu__nav > ul > li > a');
-  const $submenuItems = document.querySelectorAll('.nav-submenu > ul > li > a');
+  const $submenuNodes = document.querySelectorAll('.nav-submenu > a');
+  const $menuLinks = document.querySelectorAll('.menu__nav > ul > li > a');
+  const $submenuLinks = document.querySelectorAll('.nav-submenu > ul > li > a');
   const TRANSITION_DELAY = 400;
   const MOBILE_MENU_BREAKPOINT = 1024;
 
   let isInit = false;
+
+  $submenuNodes.forEach((el) => {
+    el.addEventListener('click', (e) => e.preventDefault());
+  });
+
+  window.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const submenuNode = e.target.closest('.nav-submenu');
+
+    if (submenuNode) {
+      toggleSubmenu(submenuNode);
+    } else {
+      closeSubmenu(document.querySelector('.nav-submenu.is-active'));
+    }
+  });
 
   const checkScreenWidth = () => {
     // Активируем меню только на экранах <= 1024
@@ -24,14 +41,12 @@
       $burger.addEventListener('click', toggleMenu);
       $close?.addEventListener('click', closeMenu);
       $overlay?.addEventListener('click', closeMenu);
-      $menuItems.forEach((el) => {
-        if (el.parentElement.classList.contains('nav-submenu')) {
-          el.addEventListener('click', toggleSubmenu);
-        } else {
+      $menuLinks.forEach((el) => {
+        if (!el.parentElement.classList.contains('nav-submenu')) {
           el.addEventListener('click', closeMenu);
         }
       });
-      $submenuItems.forEach((el) => {
+      $submenuLinks.forEach((el) => {
         el.addEventListener('click', closeMenu);
       });
     } else {
@@ -72,9 +87,16 @@
     }, TRANSITION_DELAY);
   }
 
-  function toggleSubmenu(e) {
-    e.preventDefault();
-    e.target.closest('.nav-submenu').classList.toggle('is-active');
+  function toggleSubmenu(el) {
+    el.classList.contains('is-active') ? closeSubmenu(el) : openSubmenu(el);
+  }
+
+  function openSubmenu(el) {
+    el.classList.add('is-active');
+  }
+
+  function closeSubmenu(el) {
+    el.classList.remove('is-active');
   }
 
   function toggleMenu() {

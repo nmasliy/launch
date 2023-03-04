@@ -5,25 +5,16 @@
     @include flex-sb;
 
     > li {
-      margin-right: 30px;
       color: $white-color;
 
       > a {
         display: inline-block;
-        padding: 24px 5px;
+        padding: 24px 15px;
         transition: $transition;
 
         @include hover {
           color: $accent-color;
         }
-      }
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &.nav-submenu {
-        margin-right: 0;
       }
     }
   }
@@ -53,60 +44,48 @@
   }
 
   > ul {
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: 100%;
-    z-index: 3;
+    top: var(--header-height);
+    z-index: 14;
     display: none;
+    align-items: center;
+    justify-content: center;
     border-radius: 2px;
-    padding: 8px;
+    padding: 3px 10px 8px;
     width: 100%;
-    color: #181818;
-    background-color: $white-color;
+    background-color: $accent-color;
 
     > li > a {
-      position: relative;
       display: inline-block;
-      padding: 8px 0 8px 20px;
+      padding: 10px 15px;
+      color: $white-color;
       transition: $transition;
-
-      &::before {
-        content: "";
-        position: absolute;
-        left: 4px;
-        top: 11px;
-        border-radius: 1px;
-        width: 6px;
-        height: 6px;
-        background-color: #181818;
-        transition: $transition;
-      }
 
       @include hover {
         color: $accent-color;
-
-        &::before {
-          background-color: $accent-color;
-        }
+        background-color: $white-color;
       }
     }
   }
 
-  @include hover {
-    background-color: rgba(0, 0, 0, 14%);
-
+  &.is-active {
     > ul {
-      display: block;
+      display: flex;
+    }
+
+    > a {
+      > span {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 }
 
 @media screen and (max-width: 1280px) {
-  .nav > ul > li {
-    margin-right: 20px;
-  }
-
-  .nav .nav-submenu {
-    margin-right: 0;
+  .nav > ul > li > a {
+    padding: 24px 7px;
   }
 }

@@ -1,5 +1,5 @@
 .hero {
-  padding-top: 24px;
+  padding-top: calc(var(--header-height) + 24px);
   background:
     url("../img/bg-elements.svg") top 36% right -42px no-repeat,
     url("../img/hero-bg.jpg") center bottom / cover no-repeat;
