@@ -18,8 +18,6 @@
   });
 
   window.addEventListener('click', (e) => {
-    e.preventDefault();
-
     const submenuNode = e.target.closest('.nav-submenu');
 
     if (submenuNode) {
@@ -96,7 +94,7 @@
   }
 
   function closeSubmenu(el) {
-    el.classList.remove('is-active');
+    el?.classList.remove('is-active');
   }
 
   function toggleMenu() {
